@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
-set -o errexit
 set -o errtrace
-set -o pipefail
 
 cd "$(dirname "${BASH_SOURCE}")"
 
@@ -31,6 +29,8 @@ unset doIt
 
 cd ${HOME}
 
+[[ -d .ssh ]] || $(mkdir -p .ssh && chmod 700 .ssh)
+
 if [[ -d .oh-my-zsh ]]; then
     echo "Updating Oh My Zsh..."
     cd .oh-my-zsh
@@ -41,10 +41,5 @@ else
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended --keep-zshrc
 fi
 
-# Change shell to zsh if not in a restricted environment
-if [[ "$CODER" != "true" ]] && command -v sudo >/dev/null 2>&1; then
-    echo "Changing default shell to zsh..."
-    sudo chsh -s $(which zsh) "$(whoami)" 2>/dev/null || echo "Note: Could not change default shell (this is normal in containerized environments)"
-else
-    echo "Skipping shell change in containerized environment"
-fi
+echo "Changing default shell to zsh..."
+sudo chsh -s $(which zsh) "$(whoami)" || echo "Note: Could not change default shell!"
