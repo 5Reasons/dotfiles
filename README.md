@@ -19,7 +19,10 @@ This repository contains configuration files and setup scripts to quickly config
 - **`.zshrc`** - Zsh shell configuration with Oh My Zsh integration
   - Theme: `robbyrussell`
   - Case-sensitive completion enabled
-  - Plugins: git, celery, man, colorize, node, npm, yarn, pip, python, pyenv, pipenv, poetry, ssh-agent, colored-man-pages, zsh-autosuggestions, zsh-syntax-highlighting
+  - Enhanced PATH configuration with `~/bin` directory
+  - Plugins: bun, deno, direnv, git, gh, celery, man, colorize, node, npm, nvm, yarn, pip, python, pyenv, pipenv, poetry, ssh-agent, colored-man-pages, postgres, pyenv, ubuntu, uv, vscode
+  - System-level syntax highlighting and autosuggestions integration
+  - Bun runtime support
 
 - **`.bash_profile`** - Bash shell configuration
   - PATH configuration with `~/bin` directory
@@ -78,8 +81,10 @@ The bootstrap script will:
 ### Zsh Configuration
 
 - **Oh My Zsh** framework with robbyrussell theme
-- **Enhanced plugins** for development workflow
-- **Auto-suggestions** and syntax highlighting
+- **Enhanced plugins** for modern development workflow (JavaScript/TypeScript, Python, DevOps)
+- **System-level integration** for syntax highlighting and autosuggestions
+- **Runtime support** for Node.js, Python, Bun, Deno
+- **Development tools** integration (VS Code, GitHub CLI, direnv)
 - **Case-sensitive completion** for precise matching
 
 ### Bash Configuration
@@ -115,8 +120,19 @@ Create additional files in your home directory:
 Edit the `plugins` array in `.zshrc`:
 
 ```bash
-plugins=(git celery man colorize node npm yarn pip python pyenv pipenv poetry ssh-agent colored-man-pages zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(bun deno direnv git gh celery man colorize node npm nvm yarn pip python pyenv pipenv poetry ssh-agent colored-man-pages postgres pyenv ubuntu uv vscode)
 ```
+
+### Development Runtime Support
+
+The configuration includes support for:
+
+- **JavaScript/TypeScript**: Node.js (nvm), Bun, Deno
+- **Python**: pyenv, pipenv, poetry, uv (fast Python package installer)
+- **Database**: PostgreSQL tools and utilities
+- **DevOps**: direnv for directory-based environment variables
+- **Version Control**: Git with GitHub CLI (gh) integration
+- **Editor**: VS Code integration and utilities
 
 ## Container/Kubernetes Usage
 

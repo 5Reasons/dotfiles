@@ -3,6 +3,7 @@
 
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
+[[ -d ${HOME}/bin ]] && export PATH="${HOME}/bin:${PATH}"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time Oh My Zsh is loaded, in which case,
@@ -70,7 +71,7 @@ CASE_SENSITIVE="true"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git celery man colorize node npm yarn pip python pyenv pipenv poetry ssh-agent colored-man-pages zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(bun deno direnv git gh celery man colorize node npm nvm yarn pip python pyenv pipenv poetry ssh-agent colored-man-pages postgres pyenv ubuntu uv vscode)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -102,3 +103,9 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
