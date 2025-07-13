@@ -19,11 +19,11 @@ This repository contains configuration files and setup scripts to quickly config
 - **`.zshrc`** - Zsh shell configuration with Oh My Zsh integration
   - Theme: `robbyrussell`
   - Case-sensitive completion enabled
-  - Enhanced PATH configuration with `~/bin` directory
+  - Enhanced PATH configuration with `~/bin` directory and early pyenv initialization
   - Plugins: bun, deno, direnv, git, gh, celery, man, colorize, node, npm, nvm, yarn, pip, python, pyenv, pipenv, poetry, ssh-agent, colored-man-pages, postgres, pyenv, ubuntu, uv, vscode
   - System-level syntax highlighting and autosuggestions integration
   - Bun runtime support with automatic PATH configuration
-  - Pyenv integration with automatic initialization and virtualenv support
+  - Pyenv integration with early initialization for optimal Python environment setup
 
 - **`.bash_profile`** - Bash shell configuration
   - PATH configuration with `~/bin` directory
@@ -129,10 +129,11 @@ plugins=(bun deno direnv git gh celery man colorize node npm nvm yarn pip python
 The configuration includes support for:
 
 - **JavaScript/TypeScript**: Node.js (nvm), Bun, Deno
-- **Python**: pyenv with automatic initialization, pipenv, poetry, uv (fast Python package installer)
-  - Automatic pyenv PATH configuration
+- **Python**: pyenv with early initialization for optimal performance, pipenv, poetry, uv (fast Python package installer)
+  - Early pyenv PATH configuration during shell startup
   - Virtualenv integration and initialization
   - Support for multiple Python versions
+  - Optimized initialization order for faster shell startup
 - **Database**: PostgreSQL tools and utilities
 - **DevOps**: direnv for directory-based environment variables
 - **Version Control**: Git with GitHub CLI (gh) integration

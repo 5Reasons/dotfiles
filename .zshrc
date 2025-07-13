@@ -4,6 +4,13 @@
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 [[ -d ${HOME}/bin ]] && export PATH="${HOME}/bin:${PATH}"
+if [[ -d $HOME/.pyenv ]]; then
+	export PATH="$HOME/.pyenv/bin:$PATH"
+	eval "$(pyenv init --path)"
+	eval "$(pyenv init -)"
+	eval "$(pyenv virtualenv-init -)"
+fi
+
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time Oh My Zsh is loaded, in which case,
@@ -109,10 +116,3 @@ source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
-
-if [[ -d $HOME/.pyenv ]]; then
-	export PATH="$HOME/.pyenv/bin:$PATH"
-	eval "$(pyenv init --path)"
-	eval "$(pyenv init -)"
-	eval "$(pyenv virtualenv-init -)"
-fi
