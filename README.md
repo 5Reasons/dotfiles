@@ -22,7 +22,8 @@ This repository contains configuration files and setup scripts to quickly config
   - Enhanced PATH configuration with `~/bin` directory
   - Plugins: bun, deno, direnv, git, gh, celery, man, colorize, node, npm, nvm, yarn, pip, python, pyenv, pipenv, poetry, ssh-agent, colored-man-pages, postgres, pyenv, ubuntu, uv, vscode
   - System-level syntax highlighting and autosuggestions integration
-  - Bun runtime support
+  - Bun runtime support with automatic PATH configuration
+  - Pyenv integration with automatic initialization and virtualenv support
 
 - **`.bash_profile`** - Bash shell configuration
   - PATH configuration with `~/bin` directory
@@ -128,7 +129,10 @@ plugins=(bun deno direnv git gh celery man colorize node npm nvm yarn pip python
 The configuration includes support for:
 
 - **JavaScript/TypeScript**: Node.js (nvm), Bun, Deno
-- **Python**: pyenv, pipenv, poetry, uv (fast Python package installer)
+- **Python**: pyenv with automatic initialization, pipenv, poetry, uv (fast Python package installer)
+  - Automatic pyenv PATH configuration
+  - Virtualenv integration and initialization
+  - Support for multiple Python versions
 - **Database**: PostgreSQL tools and utilities
 - **DevOps**: direnv for directory-based environment variables
 - **Version Control**: Git with GitHub CLI (gh) integration

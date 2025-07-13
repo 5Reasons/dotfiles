@@ -109,3 +109,10 @@ source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+if [[ -d $HOME/.pyenv ]]; then
+	export PATH="$HOME/.pyenv/bin:$PATH"
+	eval "$(pyenv init --path)"
+	eval "$(pyenv init -)"
+	eval "$(pyenv virtualenv-init -)"
+fi
