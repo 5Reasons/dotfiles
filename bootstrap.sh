@@ -14,7 +14,7 @@ function doIt() {
         --exclude "bootstrap.sh" \
         --exclude "README.md" \
         --exclude "LICENSE-MIT.txt" \
-        -avh --no-perms . ~
+        -avh --no-perms --no-times . ~
     source ~/.bash_profile
 }
 
@@ -41,4 +41,10 @@ else
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended --keep-zshrc
 fi
 
-sudo chsh -s $(which zsh) "$(whoami)"
+# Change shell to zsh if not in a restricted environment
+if [[ "$CODER" != "true" ]] && command -v sudo >/dev/null 2>&1; then
+    echo "Changing default shell to zsh..."
+    sudo chsh -s $(which zsh) "$(whoami)" 2>/dev/null || echo "Note: Could not change default shell (this is normal in containerized environments)"
+else
+    echo "Skipping shell change in containerized environment"
+fi
