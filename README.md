@@ -30,10 +30,8 @@ This repository contains configuration files and setup scripts to quickly config
 - **`bootstrap.sh`** - Main setup script that:
   - Pulls latest changes from the repository
   - Syncs dotfiles to home directory using rsync
-  - Installs or updates Oh My Zsh
+  - Installs or updates Oh My Zsh automatically
   - Excludes unnecessary files during sync
-
-- **`install.sh`** - Oh My Zsh installation script (standard upstream installer)
 
 ## Quick Start
 
@@ -110,7 +108,7 @@ plugins=(git celery man colorize node npm yarn pip python pyenv pipenv poetry ss
 
 - **macOS** (primary target platform)
 - **Git** for cloning and updates
-- **Curl** for Oh My Zsh installation
+- **Curl** for Oh My Zsh installation (handled automatically by bootstrap script)
 - **Zsh** shell (recommended)
 
 ## Notes
