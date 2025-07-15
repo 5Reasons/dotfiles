@@ -23,7 +23,7 @@ This repository contains configuration files and setup scripts to quickly config
   - Plugins: bun, deno, direnv, git, gh, celery, man, colorize, node, npm, nvm, yarn, pip, python, pyenv, pipenv, poetry, ssh-agent, colored-man-pages, postgres, pyenv, ubuntu, uv, vscode
   - System-level syntax highlighting and autosuggestions integration
   - Bun runtime support with automatic PATH configuration
-  - Pyenv integration with early initialization for optimal Python environment setup
+  - Pyenv integration with PYENV_ROOT configuration and shell-specific initialization
 
 - **`.bash_profile`** - Bash shell configuration
   - PATH configuration with `~/bin` directory
@@ -129,7 +129,9 @@ plugins=(bun deno direnv git gh celery man colorize node npm nvm yarn pip python
 The configuration includes support for:
 
 - **JavaScript/TypeScript**: Node.js (nvm), Bun, Deno
-- **Python**: pyenv with early initialization for optimal performance, pipenv, poetry, uv (fast Python package installer)
+- **Python**: pyenv with optimized configuration and early initialization, pipenv, poetry, uv (fast Python package installer)
+  - PYENV_ROOT environment variable properly configured
+  - Shell-specific initialization for zsh (`pyenv init - zsh`)
   - Early pyenv PATH configuration during shell startup
   - Virtualenv integration and initialization
   - Support for multiple Python versions

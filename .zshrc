@@ -5,9 +5,10 @@
 export ZSH="$HOME/.oh-my-zsh"
 [[ -d ${HOME}/bin ]] && export PATH="${HOME}/bin:${PATH}"
 if [[ -d $HOME/.pyenv ]]; then
+	export PYENV_ROOT="$HOME/.pyenv"
 	export PATH="$HOME/.pyenv/bin:$PATH"
 	eval "$(pyenv init --path)"
-	eval "$(pyenv init -)"
+	eval "$(pyenv init - zsh)"
 	eval "$(pyenv virtualenv-init -)"
 fi
 
